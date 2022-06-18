@@ -1,0 +1,17 @@
+{%extends 'app/base.html'%}
+    {% block title %} <title>Task detail - {{task}}</title> {% endblock title%}
+{%block content%}
+{% include 'app/navbar.html'%}
+<div class="tasklist">
+<h2>Task: {{task}}</h2>
+{%if task.complete == False%}
+        This task is not completed
+    {%else%}
+        Task is completed
+{%endif%}
+<br/>
+<br/>
+<button id="button-standard"><a href="{% url 'home' %}">Go back</a></button>
+</div>
+{% include 'app/footer.html'%}
+{%endblock content%}

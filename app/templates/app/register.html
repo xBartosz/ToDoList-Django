@@ -1,0 +1,14 @@
+{%extends 'app/base.html' %}
+{% block title %} <title>Register Page</title> {% endblock title %}
+{%block content%}
+<span style="font-size:25px; text-align:center; padding: 50px 0px 50px;">Create an account!</span>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <span style="padding-left:50px;"><input type="submit" value="Confirm"></span>
+
+</form>
+
+<span style="padding-left:50px;">Already have an account? Click <a href="{% url 'login' %}"><b>here</b></a></span>
+
+{%endblock%}

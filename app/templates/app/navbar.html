@@ -1,0 +1,12 @@
+<div class="navbar">
+    {%if user.is_authenticated %}
+    <b>Hello {{user|title}}</b>
+
+    <div id="right-text-navbar">
+    <a href="{% url 'logout' %}">Logout</a>
+        </div>
+{%endif%}
+
+
+
+</div>

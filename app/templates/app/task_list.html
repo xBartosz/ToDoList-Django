@@ -1,0 +1,26 @@
+{% extends "app/base.html" %}
+{% block content %}
+{% include 'app/navbar.html'%}
+<br/>
+<div class="tasklist-create-main">
+    <a href="{% url 'task-create'%}"><b>Create Task <i style="padding:1px;" class="fa fa-plus-circle" aria-hidden="true"></i></b></a>
+</div>
+<div class="tasklist">
+    <br/>
+    <br/>
+    <span style="font-size:25px;"><b>You have {{count}} incomplete tasks!</b></span>
+    <br/>
+    <br/>
+    <br/>
+    {% for task in tasks %}
+
+    {{ forloop.counter }}. {{task}}
+
+    <button id="button-3options"><a href="{% url 'task-detail' task.id%}">Detail</a></button>
+    <button id="button-3options"><a href="{% url 'task-update' task.id%}">Edit</a> </button>
+    <button id="button-3options"><a href="{% url 'task-delete' task.id%}">Delete</a> </button>
+    <br/>
+    {%endfor%}
+</div>
+{% include 'app/footer.html'%}
+{% endblock content %}

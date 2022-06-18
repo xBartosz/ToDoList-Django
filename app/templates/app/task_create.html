@@ -1,0 +1,19 @@
+{% extends "app/base.html" %}
+{% block title %} <title>Create your task!</title> {% endblock title %}
+{% block  content %}
+{% include 'app/navbar.html'%}
+<div class="tasklist">
+<form method="POST" action="">
+    <b>
+    {% csrf_token %}
+    {{form.as_p}}
+    </b>
+    <div class="button-options">
+    <input type="submit" value="Submit">
+
+</form>
+<button id="button-standard"><a href="{% url 'home' %}">Go back</a></button>
+    </div>
+</div>
+{% include 'app/footer.html'%}
+{% endblock content %}

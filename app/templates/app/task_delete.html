@@ -1,0 +1,16 @@
+{% extends "app/base.html" %}
+{% block title %} <title>Task delete- {{taskdelete}}</title> {% endblock title %}
+{%block content%}
+{% include 'app/navbar.html'%}
+<div class="task-delete">
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{taskdelete}}" Task? </p>
+    <div class="button-options">
+    <input type="submit" value="Yes">
+</form>
+<button id="button-standard"><a href="{% url 'home' %}">No</a></button>
+    </div>
+    </div>
+{% include 'app/footer.html'%}
+{%endblock content%}
