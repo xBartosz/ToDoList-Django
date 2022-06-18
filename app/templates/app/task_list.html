@@ -8,7 +8,11 @@
 <div class="tasklist">
     <br/>
     <br/>
+    {%if count > 1 %}
     <span style="font-size:25px;"><b>You have {{count}} incomplete tasks!</b></span>
+    {%else%}
+    <span style="font-size:25px;"><b>You have {{count}} incomplete task!</b></span>
+    {%endif%}
     <br/>
     <br/>
     <br/>
